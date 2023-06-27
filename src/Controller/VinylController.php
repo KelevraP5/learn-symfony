@@ -13,7 +13,8 @@ class VinylController extends AbstractController{
     #[Route('/')]
 
     public function test() : Response {
-
+        $title = 'PB & Jams';
+        $subtitle = 'C\'est la musique qu\'on aime';
         $tracks = [
             ['song' => 'Gangsta\'s Paradise', 'artist' => 'Coolio'],
             ['song' => 'Waterfalls', 'artist' => 'TLC'],
@@ -23,7 +24,8 @@ class VinylController extends AbstractController{
         ];
 
         return $this->render('vinyl/homepage.html.twig', [
-            'title' => 'PB & Jams',
+            'title' => $title,
+            'subtitle' => $subtitle,
             'tracks' => $tracks,
         ]);
     }

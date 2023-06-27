@@ -1,4 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Create a new Record - {{parent()}}{% endblock %}
+
+{% block body %}
+
 <h1>{{title}}</h1>
+<h3>{{subtitle}}</h3>
+<p>Ici Twig</p>
 
 <div>
     <p>Tracklist :</p>
@@ -6,9 +14,10 @@
     <ul>
         {% for track in tracks %}
             <li>
-                {{track.song}} - {{track.artist}}
+                {{track.song}} - {{track.artist|upper}}
             </li>
         {% endfor %}
     </ul>
 </div>
 
+{% endblock %}
