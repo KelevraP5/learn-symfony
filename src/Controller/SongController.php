@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 
 class SongController extends AbstractController{
 
-    #[Route('/api/songs/{id<\d+>}', methods: ['GET'])] // le <\d+> = digit of any length --> évite que si on fait passer une string on ai une erreur 500 mais plutôt une 404.
+    #[Route('/api/songs/{id<\d+>}', methods: ['GET'], name: 'api songs get one')] // le <\d+> = digit of any length --> évite que si on fait passer une string on ai une erreur 500 mais plutôt une 404.
 
     public function getSong(int $id, LoggerInterface $logger) : Response {
 
